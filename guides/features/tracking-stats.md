@@ -11,11 +11,12 @@ Instructions - User Can View Stats
 - Let's look at the steps required to complete this feature:
 
 1. Adding new global variables to track the number of games played, and the number of attempted matches.
-2. Adding IDs to the text elements which need to display updated statistics information
-3. Creating a function which will display the statistics in the proper text elements at the end of each round.
-4. Adding the `displayStats` function call to your code so that the stats are updated each round.
-5. Creating a function which will calculate the accuracy of the players attempts to match cards.
-6. Updating the `calculateAccuracy` function for proper display of accuracy on the DOM.
+2. Incrementing the attempts variable.
+3. Adding IDs to the text elements which need to display updated statistics information
+4. Creating a function which will display the statistics in the proper text elements at the end of each round.
+5. Adding the `displayStats` function call to your code so that the stats are updated each round.
+6. Creating a function which will calculate the accuracy of the players attempts to match cards.
+7. Updating the `calculateAccuracy` function for proper display of accuracy on the DOM.
 
 - Now that we have a list of steps to complete for this feature, let's get started!
 
@@ -33,7 +34,19 @@ Instructions - User Can View Stats
 - With the above information in mind, declare the `attempts` and `gamesPlayed` variables in the global space with initial values of zero.
 - When the above is completed, move on to the next step!
 
-## 2. Adding IDs to the text elements which need to display updated statistics information
+## 2. Incrementing the attempts variable.
+
+- Now that you have new global variables to keep track of statistics information, it is time to begin incrementing the `attempts` variable during the game play.
+  - `NOTE:` the `gamesPlayed` variable will not be used until the game reset in the next Feature!
+
+- Deciding when to increment the value of the `attempts` variable is the primary goal of this step, so let's take a moment to think about it:
+  - Because `attempts` will be used to track the number of times a player attempts to match cards, the `attempts` variable must be incremented by one every time the player attempts a match.
+  - With the above information in mind, increment the `attempts` variable in the proper two places of the `handleClick` function to match the example functionality below:
+  ![attempts increment](../feature-gifs/attempts-increment.gif)
+  - When you have completed and tested the above functionality, move on to the next step!
+
+
+## 3. Adding IDs to the text elements which need to display updated statistics information
 
 - With the proper variables declared and ready to store the needed information, it is time to adjust the HTML structure to make targeting the necessary text elements on the DOM effective.
 - There are three elements which require Ids for targeting purposes:
