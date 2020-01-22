@@ -204,10 +204,12 @@ Let's get started!
   ![Compare changes to merge](../post-feature/compare-changes.gif)
   3. Create a new pull request:
   ![Create new pull request](../post-feature/create-pull-request.gif)
-  4. Merge pull request:
-  ![Merge pull request](../post-feature/merge-pull-request.gif)
+  4. Merge the pull request:
+  ![merge pull request](../feature-gifs/merge-request.gif)
   5. Update master with the new changes:
+  - Note: you must `checkout` to the `master` branch and then `git pull origin master` to update your local `master` branch with the new code you just merged into the remote `master` branch.
   ![Update master](../post-feature/pull-new-changes.gif)
-  6. Create a pull request from your updated master branch to the student-reviews branch and send the pull request to your lead instructor in Slack.
+  6. Create a pull request from your `feature` branch to the `student-reviews` branch and send the pull request to your lead instructor in Slack.
+    - You will be deleting this branch only `AFTER` your pull request has been approved!
 ![pull request from master](../post-feature/pull-request.gif)
   7. Go back to [Features](../../README.md#features), if you're still working through the project.
