@@ -141,6 +141,7 @@ Instructions - User Can View Stats
   3. Create a new pull request:
   ![Create new pull request](../post-feature/create-pull-request.gif)
   4. Merge the pull request:
+  ![merge pull request](../feature-gifs/merge-request.gif)
   5. Update master with the new changes:
   - Note: you must `checkout` to the `master` branch and then `git pull origin master` to update your local `master` branch with the new code you just merged into the remote `master` branch.
   ![Update master](../post-feature/pull-new-changes.gif)
