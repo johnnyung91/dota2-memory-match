@@ -1,33 +1,95 @@
-Instructions - Resetting Game
+Instructions - User Can Reset Game and Play Again
 --
 
 ### Overview
 
-In this feature, you are resetting the game.
-  - To do this you must:
-    - Reset the stats to their original values
-      - Except for `games played`, that must be incremented every time the game is reset
-    - Return the cards to their original state
-      - This means all logo cards are hidden and the `lfz-card` images are shown
+In this feature, you are giving the user the ability to reset the game and play again after the game is complete.
+  - Let's look at the steps required to complete this feature:
+  1. Declare a new function `resetGame` which will reset the `statistic` global variables and increment the `gamesPlayed` global variable.
+  2. Declare a new function `resetCards` which will remove the "hidden" class from the `card-back` cards so that they are no longer hidden.
+  3. Add a button to the `modal` which will reset the game when clicked.
+  4. Add click functionality to the new `modal` button which will call the `resetGame` button on click.
+  5. Add functionality to close the `modal` when the reset game button is clicked.
+  6. Add functionality to the `calculateAccuracy` function to fix the `NaN` issue.
 
-### Feature Set
+  - Now that we have the steps required to complete the functionality for this feature, let's get started!
 
-1. In your `script.js` file, declare a new function in the global space, `resetStats`.
-2. The function should reassign all the variables used to track stats back to `null`.
-   - `matches`
-   - `attempts`
-3. Resetting the game counts as completing the game.
-   - Increment the `games_played` variable, by `1`.
-4. Use your previously created function, `displayStats`, to update the DOM for the recently modified stat variables.
-5. Additionally, select all the cards that are on the page and flip them back.
-    - The `lfz-card` images should be showing.
-    - You will want to remove the `hidden` class on all cards to set them back to their original states before the game was played.
+  ## 1. Declare a new function `resetGame` which will reset the `statistic` global variables and increment the `gamesPlayed` global variable.
 
-### Design Docs
+  - The first step to resetting the game is to declare a new function which will reset the game back to it original state so that the game can be played again.
+  - Take a moment and think about the global variables which must be adjusted to their original values in order to reset the game.
+  - Also, consider what must be done with the `gamesPlayed` variable once a game is complete.
+  - With the above information in mind, declare a new function, `resetGame` in the global space.
+    - Within the function:
+      - Reset the `statistics` global variables to the proper values for a new game.
+      - Increment the `gamesPlayed` variable.
+      - Use existing app functionality to update the `stats` text nodes on the DOM.
+        - You have a function for this!
+    - When the above is complete, test your app by calling the `resetGame()` method in the console.
+      - Example functionality:
+      ![stats-reset](../feature-gifs/stats-reset.gif)
+    - When your functionality matches the above, move on to the next step!
 
-#### Game Reset
+## 2. Declare a new function `resetCards` which will remove the "hidden" class from the `card-back` cards so that they are no longer hidden.
 
-![Resetting Game](../feature-gifs/reset-game.gif)
+  - Now that the `stats` variables are being properly reset, and the DOM is being updated to match the updated variable values, it is time to reset the flipped over cards.
+  - Let's take a moment to think about what needs to be done to reset the cards:
+    - First, you need to select and store references to each of the cards with the class of `card-back`
+      - this is because it is only cards with the class of `card-back` which are hidden.
+    - Next, you must loop through each of the cards and remove the class of `hidden`
+  - With the above information in mind, declare a new function in the global space, `resetCards`.
+  - Within the `resetCards` function:
+    - Use the `querySelectorAll` method to select the nodeList of elements with the `class` of `card-back`.
+      - Store that nodeList in a variable named `hiddenCards`
+      - MDN documentation on the `querySelectorAll` method. [**Click Here**](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
+    - Then, loop through the `nodeList` of `card-back` cards stored in the `hiddenCards` variable:
+      - For each iteration of the loop:
+        - remove the `hidden` class from the element whose index in the `nodeList` matches the iteration number of the loop
+        - W3 Schools documentation on the `classList` property: [**Click Here**](https://www.w3schools.com/jsref/prop_element_classlist.asp)
+    - When you have completed the above, test your code by calling the `resetCards` function from the console.
+    - Example functionality:
+      ![reset cards](../feature-gifs/reset-cards.gif)
+    - When the cards flip back over after calling the `resetCards` function, add the function call for the `resetCards` function into your `resetGame` function so that the cards are reset when the `resetGame` function is called.
+    - When the above is complete, move on to the next step!
+
+## 3. Add a button to the `modal` which will reset the game when clicked.
+
+  - Now that you have completed the functionality to reset the `statistics` display and to reset the cards, it is time to add a button to the `modal` so that the player can click it and reset the game once they have won.
+  - With the above in mind, create a new button in the `modal` using HTML.
+  - Example `modal` after update:
+  ![button-example](../images/button-example.png)
+  - When you have added and styled your button to the `modal`, move on to the next step!
+
+##  4. Add click functionality to the new `modal` button which will call the `resetGame` button on click.
+
+  - Now that you have a reset button, it is time to add click functionality to it so that it will call the `resetGame` function when it is clicked.
+  - With the above information in mind:
+    - Use JavaScript to add a click event handler which calls the `resetGame` function when the `modal` button is clicked.
+      - Make sure to add an `id` to the button for targeting!
+  - Example functionality:
+  ![modal button click](../feature-gifs/modal-button.gif)
+  - When you have completed the above functionality, move on to the next step!
+
+## 5. Add functionality to close the `modal` when the reset game button is clicked.
+
+  - Now that the `modal` button is correctly calling the `resetGame` function on click, it is time to add functionality which will hide the `modal` when the `resetGame` function is called.
+  - With the above information in mind:
+    - Add the necessary JavaScript to the end of the `resetGame` function to hide the `modal` when the reset button is clicked.
+  - Example functionality:
+  ![modal close](../feature-gifs/modal-hide.gif)
+  - When the above is completed and your functionality matches the example, move on to the next step!
+
+## 6. Add functionality to the `calculateAccuracy` function to fix the `NaN` issue.
+
+  - Now that the `modal` is hiding properly and the game is being reset, it is time to fix the `NaN` issue with the `Accuracy` display on reset.
+  - The reason for the display of `NaN` is that you are calling the `displayStats` function on reset, and it is trying to calculate accuracy using zero for both `matches` and `attempts`.
+  - To fix this, we are going to add a simple conditional check to return a different string from the `calculateAccuracy` function when no attempts have been made to match cards yet.
+  - Within the `calculateAccuracy` function:
+    - add a conditional statement at the top of the function which returns the string "0%" when the `attempts` variable contains a falsy value.
+  - Example functionality:
+    ![fixed percentage](../feature-gifs/fixed-percentage.gif)
+  - When your functionality matches the above, Congratulations!!! you have completed the MVP for the Memory Match Game!!!
+  - Move on to the `After The Final Feature` section below.
 
 ### After The Final Feature
 
@@ -58,10 +120,3 @@ In this feature, you are resetting the game.
 ![pull request from master](../post-feature/pull-request.gif)
   7. Go back to [Features](../../README.md#features), if you're still working through the project.
 
-  ### How to turn in your project for review!
-
-
-- Once you have merged your final version of the Memory Match game onto your master branch, you will be turning it in for Review from the senior class.
-  - On Github, and from your Memory Match Repository:
-    - Create a new pull request
-    - Make that pull request from your "master" branch to the "student-reviews" branch on the Learning Fuze Memory Match Repository.
