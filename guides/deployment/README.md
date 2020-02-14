@@ -1,6 +1,6 @@
 # Deployment a Static Web Application to Ubuntu on AWS EC2
 
-This guide outlines steps for deploying a static web application to an EC2 instance on AWS.  By static we mean an application that does not have a node server or a database to set up.  For instructions on how to deploy a full stack application please go [here](https://github.com/Learning-Fuze/full-stack-project/blob/master/guides/DEPLOYMENT.md). The guide assumes that you have already provisioned an EC2 instance, that you have SSH access to the instance, along with nginx and certbot installed. Some parts of this guide may have been covered during class, but they are recorded here for future reference.
+This guide outlines steps for deploying a static web application to an EC2 instance on AWS.  By static we mean an application that does not have a back end or a database to set up.  For instructions on how to deploy a full stack application please go [here](https://github.com/Learning-Fuze/full-stack-project/blob/master/guides/DEPLOYMENT.md). The guide assumes that you have already provisioned an EC2 instance, that you have SSH access to the instance, along with nginx and certbot installed. Some parts of this guide may have been covered during class, but they are recorded here for future reference.
 
 **Note:** This guide may use "EC2 Instance" and "Ubuntu" interchangeably, because your EC2 instance _should_ be running the Ubuntu operating system.
 
@@ -25,6 +25,7 @@ Here is an example gif if for `namecheap.com`:
 
 Connect to your EC2 instance over SSH.
 
+For example:
 ```bash
 ssh -i <location of pem file> ubuntu@<ip address>
 ```
@@ -33,7 +34,7 @@ ssh -i <location of pem file> ubuntu@<ip address>
     <img src="images/mm-deployment-2.gif">
 <p>
 
-you'll want to clone the project's source code into your home directory. Confirm that your current working directory is `/home/ubuntu` with the `pwd` command.
+You'll want to clone the project's source code into your home directory. Confirm that your current working directory is `/home/ubuntu` with the `pwd` command.
 
 ```bash
 pwd
@@ -46,7 +47,7 @@ pwd
 Ubuntu comes with `git` preinstalled so you can clone the project now. Replace `username` with the owner of the repository, `memory-match` with the name of the project, and `memory-match.yourdomain.com` with your project's subdomain. If the repository is private, then you'll be prompted for your GitHub username and password.
 
 ```bash
-git clone https://github.com/username/memory-match full-stack-project.yourdomainhere.com
+git clone https://github.com/username/memory-match memory-match.yourdomainhere.com
 ```
 
 After the project is successfully cloned, running the `ls` command should show the project directory.
@@ -95,18 +96,20 @@ Now use `nano` to edit the copy you've created. Replace `memory-match.yourdomain
 sudo nano /etc/nginx/sites-available/memory-match.yourdomainhere.com
 ```
 
-Modify the `server_name` and `root` directives in the configuration file. For example, if your project name is `memory-match` and your domain is `yourdomainhere.com`, and the `PORT` you'll be using is `3003`, then your configuration file should look like this:
+Modify the `server_name` and `root` directives in the configuration file. For example, if your project name is `memory-match` and your domain is `yourdomainhere.com`, then your configuration file should look like this:
 
 ```conf
 server {
 
   server_name memory-match.yourdomainhere.com;
 
-  root /home/ubuntu/memory-match.yourdomainhere.com;
+  root /home/ubuntu/$server_name;
 
 }
 
 ```
+
+Your root should be pointing to the directory that has your `index.html`.  Keep in mind if your `index.html` is in a directory within your root directory, this will not work.  So please adjust accordingly.
 
 #### Enable the Site
 
@@ -129,7 +132,7 @@ Once your configuration file has been edited, it's time to let Nginx know about 
 
 #### Try it out!
 
-Your project is now deployed! You should be able to visit your subdomain (unless you have a `.dev` domain name) in a web browser to see the landing page of the app! 🎉🎉🎉
+Your project is now deployed! You should be able to visit your subdomain in a web browser to see the landing page of the app. If your domain has a `.dev` extension you need to complete the next step before viewing your website.  That is because the `dev` extension is a secure namespace, so you need HTTPS and an SSL certificate for your website to load on most browsers.
 
 #### Enable SSL with Certbot
 
