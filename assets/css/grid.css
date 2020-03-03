@@ -1,0 +1,106 @@
+body {
+    height: 97vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    height: 100%;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.header.row {
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game.row {
+    height: 87%;
+}
+
+.col-1 {
+    width: 8%;
+}
+
+.col-2 {
+    width: 16%;
+}
+
+.col-3 {
+    width: 24%;
+}
+
+.col-4 {
+    width: 32%;
+}
+
+.col-5 {
+    width: 40%;
+}
+
+.col-6 {
+    width: 48%;
+}
+
+.col-7 {
+    width: 56%;
+}
+
+.col-8 {
+    width: 64%;
+}
+
+.col-9 {
+    width: 72%;
+}
+
+.col-10 {
+    width: 80%;
+}
+
+.col-11 {
+    width: 88%;
+}
+
+.col-12 {
+    width: 96%;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+aside > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    height: 10%;
+    background-color: #88CDEA;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.card.col-2 {
+    background-color: black;
+    height: 25%;
+    margin: 0 auto;
+}

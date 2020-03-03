@@ -1,1 +1,13 @@
+.container {
+    background-image: url('../images/lfz-background.jpg');
+    background-size: cover;
+}
 
+header h1 {
+    font-size: 4rem;
+}
+
+div.card {
+    background-image: url('../images/lfz-card.jpg');
+    background-size: cover;
+}
