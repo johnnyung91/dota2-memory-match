@@ -63,6 +63,26 @@ div.card {
     background-image: url('../images/react-logo.png');
 }
 
+.modal-overlay {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+}
+
+.modal-content {
+    background-color: #58ACF5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+}
+
 .hidden {
     display: none;
 }
