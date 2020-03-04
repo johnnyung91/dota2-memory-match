@@ -7,6 +7,7 @@ body {
     max-width: 1500px;
     margin: auto;
     height: 100%;
+    padding: 2rem;
 }
 
 .row {
@@ -77,18 +78,18 @@ body {
 aside {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 1rem;
 }
 
 aside > div {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 65%;
+    width: 60%;
     height: 10%;
     background-color: #88CDEA;
+    font-size: 1.3rem;
 }
 
 main {
@@ -96,11 +97,9 @@ main {
     flex-wrap: wrap;
     align-items: center;
     margin: 0 auto;
-    padding: 1rem;
 }
 
 .card.col-2 {
-    background-color: black;
     height: 25%;
     margin: 0 auto;
 }
