@@ -8,6 +8,61 @@ header h1 {
 }
 
 div.card {
-    background-image: url('../images/lfz-card.jpg');
+    /* background-image: url('../images/lfz-card.jpg');
     background-size: cover;
+    background-repeat: no-repeat; */
+    position: relative;
+}
+
+.card-front, .card-back {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+}
+
+.card-back {
+    background-image: url('../images/lfz-card.jpg');
+}
+
+.css-logo {
+    background-image: url('../images/css-logo.png');
+}
+
+.docker-logo {
+    background-image: url('../images/docker-logo.jpg');
+}
+
+.github-logo {
+    background-image: url('../images/gitHub-logo.png');
+}
+
+.html-logo {
+    background-image: url('../images/html-logo.png');
+}
+
+.js-logo {
+    background-image: url('../images/js-logo.png')
+}
+
+.mysql-logo {
+    background-image: url('../images/mysql-logo.jpg');
+}
+
+.node-logo {
+    background-image: url('../images/node-logo.png');
+}
+
+.php-logo {
+    background-image: url('../images/php-logo.jpeg');
+}
+
+.react-logo {
+    background-image: url('../images/react-logo.png');
+}
+
+.hidden {
+    display: none;
 }
