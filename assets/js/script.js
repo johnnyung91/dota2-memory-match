@@ -36,16 +36,11 @@ var modalButton = document.querySelector(".modal-button");
 
 //Event Handlers start
 
-document.addEventListener("DOMContentLoaded", function() {
-    shuffle(cards);
-    startGame(cards);
-});
+// document.addEventListener("DOMContentLoaded", initiateApp);
+initiateApp();
 
 gameCards.addEventListener("click", handleClick);
 modalButton.addEventListener("click", resetGame);
-
-// shuffle(cards);
-// startGame(cards);
 
 function handleClick(event) {
     if (event.target.className.indexOf("card-back") === -1) {
@@ -75,7 +70,7 @@ function handleClick(event) {
                 modal.classList.remove("hidden");
             }
         } else {
-            setTimeout(notMatched, 1500);
+            setTimeout(notMatched, 1000);
         }
     }
 }
@@ -150,12 +145,6 @@ function shuffle(array) {
     return array;
 }
 
-function destroyChildren(element) {
-    while (element.firstChild) {
-        element.removeChild(element.firstChild);
-    }
-}
-
 function startGame(cardArray) {
     for (let i = 0; i < cardArray.length; i++) {
         var cardFront = document.createElement("div");
@@ -172,4 +161,15 @@ function startGame(cardArray) {
 
         gameCards.appendChild(cardDiv);
     }
+}
+
+function destroyChildren(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
+
+function initiateApp() {
+    shuffle(cards);
+    startGame(cards);
 }
