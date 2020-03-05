@@ -13,6 +13,8 @@ var gamesPlayed = 0;
 var gameCards = document.getElementById("game-cards");
 gameCards.addEventListener("click", handleClick);
 
+var modal = document.querySelector(".modal-overlay");
+
 function handleClick(event) {
     if (event.target.className.indexOf("card-back") === -1) {
         return;
@@ -38,7 +40,6 @@ function handleClick(event) {
             attempts++;
             displayStats();
             if (matches === maxMatches) {
-                var modal = document.querySelector(".modal-overlay");
                 modal.classList.remove("hidden");
             }
         } else {
@@ -53,7 +54,7 @@ function notMatched() {
     gameCards.addEventListener("click", handleClick);
     backToNull();
     attempts++;
-    displayStats()
+    displayStats();
 }
 
 function backToNull() {
@@ -73,7 +74,30 @@ function displayStats() {
 }
 
 function calculateAccuracy(attempts, matches) {
-    var percent = matches / attempts * 100;
-    var percentage = Math.round(percent * 100) / 100
-    return percentage + "%";
+    var percent = (matches / attempts) * 100;
+    var percentage = Math.round(percent * 100) / 100;
+    if (percentage) {
+        return percentage + "%";
+    } else {
+        return "0%"
+    }
 }
+
+function resetGame() {
+    matches = 0;
+    attempts = 0;
+    gamesPlayed++;
+    displayStats();
+    resetCards();
+    modal.classList.add("hidden");
+}
+
+function resetCards() {
+    var hiddenCards = document.querySelectorAll(".card-back");
+    for (let i = 0; i < hiddenCards.length; i++) {
+        hiddenCards[i].classList.remove("hidden");
+    }
+}
+
+var modalButton = document.querySelector(".modal-button");
+modalButton.addEventListener("click", resetGame);
