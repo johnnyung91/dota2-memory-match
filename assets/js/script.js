@@ -28,13 +28,24 @@ var cards = [
     "react-logo",
     "react-logo"
 ];
+var gameCards = document.getElementById("game-cards");
+var modal = document.querySelector(".modal-overlay");
+var modalButton = document.querySelector(".modal-button");
 
 //Global Variables end
 
-var gameCards = document.getElementById("game-cards");
-gameCards.addEventListener("click", handleClick);
+//Event Handlers start
 
-var modal = document.querySelector(".modal-overlay");
+document.addEventListener("DOMContentLoaded", function() {
+    shuffle(cards);
+    startGame(cards);
+});
+
+gameCards.addEventListener("click", handleClick);
+modalButton.addEventListener("click", resetGame);
+
+// shuffle(cards);
+// startGame(cards);
 
 function handleClick(event) {
     if (event.target.className.indexOf("card-back") === -1) {
@@ -110,6 +121,9 @@ function resetGame() {
     gamesPlayed++;
     displayStats();
     resetCards();
+    destroyChildren(gameCards);
+    shuffle(cards);
+    startGame(cards);
     modal.classList.add("hidden");
 }
 
@@ -119,9 +133,6 @@ function resetCards() {
         hiddenCards[i].classList.remove("hidden");
     }
 }
-
-var modalButton = document.querySelector(".modal-button");
-modalButton.addEventListener("click", resetGame);
 
 //start of shuffle
 function shuffle(array) {
@@ -154,11 +165,11 @@ function startGame(cardArray) {
         cardBack.classList.add("card-back");
 
         var cardDiv = document.createElement("div");
-        cardDiv.classList.add("card", "col-2")
+        cardDiv.classList.add("card", "col-2");
 
-        cardDiv.appendChild(cardFront)
-        cardDiv.appendChild(cardBack)
+        cardDiv.appendChild(cardFront);
+        cardDiv.appendChild(cardBack);
 
-        gameCards.appendChild(cardDiv)
+        gameCards.appendChild(cardDiv);
     }
 }
