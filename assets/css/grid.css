@@ -7,7 +7,7 @@ body {
     max-width: 1500px;
     margin: auto;
     height: 100%;
-    padding: 2rem;
+    /* padding: 2rem; */
 }
 
 .row {
