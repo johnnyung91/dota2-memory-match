@@ -76,11 +76,17 @@ div.card {
 .modal-content {
     background-color: #58ACF5;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     width: 50%;
     height: 50%;
+}
+
+button {
+    font-size: 2rem;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .hidden {
