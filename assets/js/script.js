@@ -8,6 +8,27 @@ var maxMatches = 9;
 var attempts = 0;
 var gamesPlayed = 0;
 
+var cards = [
+    "js-logo",
+    "js-logo",
+    "css-logo",
+    "css-logo",
+    "html-logo",
+    "html-logo",
+    "github-logo",
+    "github-logo",
+    "node-logo",
+    "node-logo",
+    "docker-logo",
+    "docker-logo",
+    "mysql-logo",
+    "mysql-logo",
+    "php-logo",
+    "php-logo",
+    "react-logo",
+    "react-logo"
+];
+
 //Global Variables end
 
 var gameCards = document.getElementById("game-cards");
@@ -79,7 +100,7 @@ function calculateAccuracy(attempts, matches) {
     if (percentage) {
         return percentage + "%";
     } else {
-        return "0%"
+        return "0%";
     }
 }
 
@@ -101,3 +122,43 @@ function resetCards() {
 
 var modalButton = document.querySelector(".modal-button");
 modalButton.addEventListener("click", resetGame);
+
+//start of shuffle
+function shuffle(array) {
+    var currentIndex = array.length,
+        temporaryValue,
+        randomIndex;
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array;
+}
+
+function destroyChildren(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
+
+function startGame(cardArray) {
+    for (let i = 0; i < cardArray.length; i++) {
+        var cardFront = document.createElement("div");
+        cardFront.classList.add("card-front", cardArray[i]);
+
+        var cardBack = document.createElement("div");
+        cardBack.classList.add("card-back");
+
+        var cardDiv = document.createElement("div");
+        cardDiv.classList.add("card", "col-2")
+
+        cardDiv.appendChild(cardFront)
+        cardDiv.appendChild(cardBack)
+
+        gameCards.appendChild(cardDiv)
+    }
+}
