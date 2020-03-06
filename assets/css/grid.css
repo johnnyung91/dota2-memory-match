@@ -24,7 +24,7 @@ body {
 }
 
 .game.row {
-    height: 87%;
+    height: 74%;
 }
 
 .col-1 {
@@ -77,19 +77,20 @@ body {
 
 aside {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
 }
 
-aside > div {
+.stats > div {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 30%;
     height: 10%;
     background-color: #88CDEA;
     font-size: 1.3rem;
+    margin: 1%;
 }
 
 main {
@@ -102,4 +103,15 @@ main {
 .card.col-2 {
     height: 25%;
     margin: 0 auto;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats.row {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
 }
