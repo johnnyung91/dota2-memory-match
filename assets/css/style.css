@@ -1,10 +1,11 @@
 body {
-    background-image: url('../images/lfz-background.jpg');
+    background-image: url('../warcraft icons/TGMQWVV9LDIW1541005875261.jpg');
     background-size: cover;
 }
 
 header h1 {
-    font-size: 4rem;
+    font-size: 4vw;
+    color: white;
 }
 
 div.card {
@@ -21,10 +22,13 @@ div.card {
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
+    border-radius: 15px;
 }
 
 .card-back {
-    background-image: url('../images/lfz-card.jpg');
+    background-image: url('../warcraft icons/horde-back.png');
+    background-color: black;
+    background-size: 100% 100%;
 }
 
 .css-logo {

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/grid.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Memory Match Game!</title>
-</head>
-<body>
-    <div class="container">
-        <div class="header row">
-            <header>
-                <h1>LFZ Memory Match</h1>
-            </header>
-        </div>
-        <div class="game row">
-            <aside class="col-2">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/css/grid.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <title>Memory Match Game!</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header row">
+                <header>
+                    <h1>LFZ Memory Match</h1>
+                </header>
+            </div>
+            <div class="game row">
+                <aside class="col-2">
                 <div>Stats</div>
                 <div>Games Played</div>
                 <div id="gamesPlayed">0</div>
@@ -24,19 +24,18 @@
                 <div>Accuracy</div>
                 <div id="accuracy">0%</div>
             </aside>
-            <main class="col-10" id="game-cards">
-            </main>
-        </div>
-    </div>
-    <div class="modal-overlay hidden">
-        <div class="modal-content">
-            <div class="modal-text">
-                <h1>CONGRATULATIONS!</h1>
-                <h1>You have won the game!</h1>
+                <main class="col-12" id="game-cards"></main>
             </div>
-            <button class="modal-button">Wanna play again</button>
         </div>
-    </div>
-    <script src="./assets/js/script.js"></script>
-</body>
+        <div class="modal-overlay hidden">
+            <div class="modal-content">
+                <div class="modal-text">
+                    <h1>CONGRATULATIONS!</h1>
+                    <h1>You have won the game!</h1>
+                </div>
+                <button class="modal-button">Wanna play again</button>
+            </div>
+        </div>
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>
