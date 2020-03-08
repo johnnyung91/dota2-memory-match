@@ -1,5 +1,5 @@
 body {
-    background-image: url('../warcraft icons/TGMQWVV9LDIW1541005875261.jpg');
+    background-image: url('../warcraft icons/woodbackground.jpg');
     background-size: cover;
 }
 
@@ -18,7 +18,7 @@ div.card {
 .card-front, .card-back {
     height: 100%;
     width: 100%;
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
@@ -28,11 +28,11 @@ div.card {
 .card-back {
     background-image: url('../warcraft icons/horde-back.png');
     background-color: black;
-    background-size: 100% 100%;
 }
 
 .css-logo {
-    background-image: url('../images/css-logo.png');
+    background-image: url('../warcraft icons/horde/orcs.png');
+    background-color: black;
 }
 
 .docker-logo {
