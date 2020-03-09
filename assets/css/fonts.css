@@ -1,0 +1,14 @@
+@font-face {
+    src: url('../fonts/Radiance-Regular.otf');
+    font-family: "Radiance";
+}
+
+@font-face {
+    src: url('../fonts/Trajan\ Bold.ttf');
+    font-family: "Trajan Bold";
+}
+
+@font-face {
+    src: url('../fonts/NotoSans-Regular.ttf.otf');
+    font-family: "Noto Sans";
+}
