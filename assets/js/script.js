@@ -10,22 +10,13 @@ var gamesPlayed = 0;
 
 var cards = [
     "faceless",
-    "faceless",
-    "kunkka",
     "kunkka",
     "lich",
-    "lich",
-    "lifestealer",
     "lifestealer",
     "shadowfiend",
-    "shadowfiend",
-    "spiritbreaker",
     "spiritbreaker",
     "tiny",
-    "tiny",
     "vengeful",
-    "vengeful",
-    "viper",
     "viper"
 ];
 var gameCards = document.getElementById("game-cards");
@@ -121,8 +112,7 @@ function resetGame() {
     displayStats();
     resetCards();
     destroyChildren(gameCards);
-    shuffle(cards);
-    startGame(cards);
+    shuffleStart(cards);
     modal.classList.add("hidden");
 }
 
@@ -133,20 +123,22 @@ function resetCards() {
     }
 }
 
-//start of shuffle
-function shuffle(array) {
-    var currentIndex = array.length,
+//start of shuffleStart
+function shuffleStart(array) {
+    var doubledArray = array.concat(array)
+
+    var currentIndex = doubledArray.length,
         temporaryValue,
         randomIndex;
     while (0 !== currentIndex) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
 
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
+        temporaryValue = doubledArray[currentIndex];
+        doubledArray[currentIndex] = doubledArray[randomIndex];
+        doubledArray[randomIndex] = temporaryValue;
     }
-    return array;
+    startGame(doubledArray)
 }
 
 function startGame(cardArray) {
@@ -174,8 +166,7 @@ function destroyChildren(element) {
 }
 
 function initiateApp() {
-    shuffle(cards);
-    startGame(cards);
+    shuffleStart(cards);
 }
 
 function correctSound() {

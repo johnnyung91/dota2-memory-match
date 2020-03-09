@@ -93,8 +93,12 @@ aside > div {
     align-items: center;
     width: 60%;
     height: 10%;
-    background-color: #88CDEA;
+    background-color: #1b1d1d;
     font-size: 1.3rem;
+    background-image: url('../dota 2 hero portraits/repeat.jpg');
+    background-repeat: repeat;
+    background-position: center;
+    box-shadow: 0px 0px 15px rgba(172, 48, 28, 0.8)
 }
 
 main {
@@ -112,12 +116,13 @@ main {
     margin-left: 1%;
     margin-bottom: 1%;
     transition: transform 0.5s;
-    border: 3px solid white;
+    /* border: 3px solid #ac3017; */
+    box-shadow: 0px 0px 15px rgba(172, 48, 28, 0.8);
     border-radius: 15px;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 0px 25px rgba(255, 255, 28, 0.8);
+    box-shadow: 0px 0px 20px rgba(255, 255, 28, 0.8);
     border-radius: 15px;
 }
