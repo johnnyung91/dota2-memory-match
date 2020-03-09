@@ -1,66 +1,67 @@
 body {
-    background-image: url('../images/lfz-background.jpg');
+    background-image: url('../dota 2 hero portraits/cinders.jpg');
     background-size: cover;
 }
 
 header h1 {
-    font-size: 4rem;
+    font-size: 4vw;
+    color: white;
 }
 
 div.card {
-    /* background-image: url('../images/lfz-card.jpg');
-    background-size: cover;
-    background-repeat: no-repeat; */
     position: relative;
 }
 
 .card-front, .card-back {
     height: 100%;
     width: 100%;
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
+    border-radius: 15px;
 }
 
 .card-back {
-    background-image: url('../images/lfz-card.jpg');
+    background-image: url('../dota 2 hero portraits/dota2.jpg');
+    /* background-color: black; */
 }
 
-.css-logo {
-    background-image: url('../images/css-logo.png');
+.faceless {
+    background-image: url('../dota 2 hero portraits/facelessvoid.jpg');
+    background-color: black;
 }
 
-.docker-logo {
-    background-image: url('../images/docker-logo.jpg');
+.kunkka {
+    background-image: url('../dota 2 hero portraits/kunkka.jpg');
 }
 
-.github-logo {
-    background-image: url('../images/gitHub-logo.png');
+.lich {
+    background-image: url('../dota 2 hero portraits/lich.jpg');
 }
 
-.html-logo {
-    background-image: url('../images/html-logo.png');
+.lifestealer {
+    background-image: url('../dota 2 hero portraits/lifestealer.jpg');
 }
 
-.js-logo {
-    background-image: url('../images/js-logo.png')
+.shadowfiend {
+    background-image: url('../dota 2 hero portraits/shadowfiend.jpg')
 }
 
-.mysql-logo {
-    background-image: url('../images/mysql-logo.jpg');
+.spiritbreaker {
+    background-image: url('../dota 2 hero portraits/spiritbreaker.jpg');
 }
 
-.node-logo {
-    background-image: url('../images/node-logo.png');
+.tiny {
+    background-image: url('../dota 2 hero portraits/tiny.jpg');
 }
 
-.php-logo {
-    background-image: url('../images/php-logo.jpeg');
+.vengeful {
+    background-image: url('../dota 2 hero portraits/vengefulspirit.jpg');
 }
 
-.react-logo {
-    background-image: url('../images/react-logo.png');
+.viper {
+    background-image: url('../dota 2 hero portraits/viper.jpg');
 }
 
 .modal-overlay {

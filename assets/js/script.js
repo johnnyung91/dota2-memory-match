@@ -9,28 +9,30 @@ var attempts = 0;
 var gamesPlayed = 0;
 
 var cards = [
-    "js-logo",
-    "js-logo",
-    "css-logo",
-    "css-logo",
-    "html-logo",
-    "html-logo",
-    "github-logo",
-    "github-logo",
-    "node-logo",
-    "node-logo",
-    "docker-logo",
-    "docker-logo",
-    "mysql-logo",
-    "mysql-logo",
-    "php-logo",
-    "php-logo",
-    "react-logo",
-    "react-logo"
+    "faceless",
+    "faceless",
+    "kunkka",
+    "kunkka",
+    "lich",
+    "lich",
+    "lifestealer",
+    "lifestealer",
+    "shadowfiend",
+    "shadowfiend",
+    "spiritbreaker",
+    "spiritbreaker",
+    "tiny",
+    "tiny",
+    "vengeful",
+    "vengeful",
+    "viper",
+    "viper"
 ];
 var gameCards = document.getElementById("game-cards");
 var modal = document.querySelector(".modal-overlay");
 var modalButton = document.querySelector(".modal-button");
+var midasCorrect = document.getElementById('midasCorrect')
+var headBonk = document.getElementById('headBonk')
 
 //Global Variables end
 
@@ -63,6 +65,7 @@ function handleClick(event) {
         if (firstCardClasses === secondCardClasses) {
             gameCards.addEventListener("click", handleClick);
             backToNull();
+            correctSound();
             matches++;
             attempts++;
             displayStats();
@@ -70,7 +73,8 @@ function handleClick(event) {
                 modal.classList.remove("hidden");
             }
         } else {
-            setTimeout(notMatched, 1000);
+            wrongSound();
+            setTimeout(notMatched, 750);
         }
     }
 }
@@ -172,4 +176,12 @@ function destroyChildren(element) {
 function initiateApp() {
     shuffle(cards);
     startGame(cards);
+}
+
+function correctSound() {
+    midasCorrect.play();
+}
+
+function wrongSound() {
+    headBonk.play();
 }
