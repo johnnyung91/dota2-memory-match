@@ -44,10 +44,12 @@ function handleClick(event) {
 
     if (!firstCardClicked) {
         firstCardClicked = event.target;
+        firstCardClicked.parentElement.classList.add('flip');
         var firstCardSibling = firstCardClicked.previousElementSibling;
         firstCardClasses = firstCardSibling.className;
     } else {
         secondCardClicked = event.target;
+        secondCardClicked.parentElement.classList.add('flip');
         var secondCardSibling = secondCardClicked.previousElementSibling;
         secondCardClasses = secondCardSibling.className;
 
@@ -72,7 +74,9 @@ function handleClick(event) {
 
 function notMatched() {
     firstCardClicked.classList.remove("hidden");
+    firstCardClicked.parentElement.classList.remove('flip');
     secondCardClicked.classList.remove("hidden");
+    secondCardClicked.parentElement.classList.remove('flip');
     gameCards.addEventListener("click", handleClick);
     backToNull();
     attempts++;

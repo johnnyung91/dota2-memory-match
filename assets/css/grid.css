@@ -96,18 +96,16 @@ aside > div {
     height: 15%;
     background-color: #1b1d1d;
     font-size: 1.3rem;
-    background-image: url('../dota 2 hero portraits/repeat.jpg');
+    background-image: url("../dota 2 hero portraits/repeat.jpg");
     background-repeat: repeat;
     background-position: center;
-    box-shadow: 0px 0px 15px rgba(172, 48, 28, 0.8)
+    box-shadow: 0px 0px 15px rgba(172, 48, 28, 0.8);
 }
 
 .stat-box {
     display: flex;
     flex-direction: column;
 }
-
-
 
 main {
     width: 75%;
@@ -116,6 +114,7 @@ main {
     justify-content: space-around;
     align-items: center;
     margin: 0 auto;
+    perspective: 1000px;
 }
 
 .card {
@@ -124,12 +123,18 @@ main {
     margin-left: 1%;
     margin-bottom: 1%;
     transition: transform 0.5s;
+    transform-style: preserve-3d;
     box-shadow: 0px 0px 15px rgba(172, 48, 28, 0.8);
     border-radius: 15px;
 }
 
-.card:hover {
+.flip {
+    transform: rotateY(180deg);
+}
+
+/* .card:hover {
     transform: translateY(-5px);
+    transition: transform 0.5s;
     box-shadow: 0px 0px 20px rgba(255, 255, 28, 0.8);
     border-radius: 15px;
-}
+} */
