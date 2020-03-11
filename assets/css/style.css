@@ -9,6 +9,7 @@ header h1 {
     font-size: 3vw;
     font-family: "Trajan Bold";
     color: #9f8972;
+    letter-spacing: 0.8rem;
 }
 
 div.card {
@@ -93,6 +94,7 @@ div.card {
     text-align: center;
     width: 50%;
     height: 50%;
+    letter-spacing: 1px;
 }
 
 .modal-button {

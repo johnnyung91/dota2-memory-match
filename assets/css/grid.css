@@ -105,6 +105,7 @@ aside > div {
 .stat-box {
     display: flex;
     flex-direction: column;
+    letter-spacing: 1px;
 }
 
 main {
@@ -131,8 +132,8 @@ main {
 .flip {
     transform: rotateY(180deg);
 }
-
-/* .card:hover {
+/*
+.card:hover {
     transform: translateY(-5px);
     transition: transform 0.5s;
     box-shadow: 0px 0px 20px rgba(255, 255, 28, 0.8);
