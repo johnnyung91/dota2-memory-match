@@ -28,7 +28,11 @@ div.card {
 }
 
 .card-front {
-    transform: rotateY('180deg');
+    transform: rotateY('-180deg');
+    opacity: 0;
+}
+.flip > .card-front {
+    opacity: 1;
 }
 
 .card-back {
