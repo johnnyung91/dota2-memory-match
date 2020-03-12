@@ -129,8 +129,6 @@ main {
     border-radius: 15px;
 }
 
-
-
 .card-back:hover {
     transform: translateY(-5px);
     transition: transform 0.5s;
