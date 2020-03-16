@@ -37,6 +37,7 @@ div.card {
 
 .card-back {
     background-image: url("../dota 2 hero portraits/dota2.jpg");
+    transition: transform 0.5s;
 }
 
 .faceless {
