@@ -25,11 +25,11 @@ var modalButton = document.querySelector(".modal-button");
 
 var midasCorrect = new Audio()
 midasCorrect.src = "./assets/audio/midas_correct.mp3"
-midasCorrect.volume = 0.4
+midasCorrect.volume = 0.2
 
 var headBonk = new Audio()
 headBonk.src = "./assets/audio/headbonk.mp3"
-headBonk.volume = 0.6
+headBonk.volume = 0.5
 
 //Global Variables end
 
@@ -186,5 +186,5 @@ function correctSound() {
 }
 
 function wrongSound() {
-    headBonk.play();
+    setTimeout(() => headBonk.play(), 250)
 }
