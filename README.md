@@ -1,6 +1,6 @@
 # Memory Match
 
-> - Maintained by: `codingcodymiller`
+> - Maintained by: `johnnyung91`
 
 
 ## Project Setup
