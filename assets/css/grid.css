@@ -1,19 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    height: 97vh;
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
-    width: 100%;
-    max-width: 1500px;
+    width: 90%;
     margin: auto;
     height: 100%;
-    /* padding: 2rem; */
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 .row {
     width: 100%;
     display: flex;
-    margin-bottom: 0.5rem;
 }
 
 .header.row {
@@ -21,6 +25,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1%;
 }
 
 .game.row {
@@ -76,33 +81,49 @@ body {
 }
 
 aside {
+    width: 20%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.stats > div {
+.stat-box {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    height: 10%;
-    background-color: #88CDEA;
-    font-size: 1.3rem;
-    margin: 1%;
+    flex-direction: column;
+    letter-spacing: 1px;
 }
 
 main {
+    width: 75%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     margin: 0 auto;
+    perspective: 1000px;
 }
 
-.card.col-2 {
-    height: 25%;
-    margin: 0 auto;
+.card {
+    height: 31%;
+    width: 14%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    box-shadow: 0px 0px 15px rgba(172, 48, 28, 0.8);
+    border-radius: 15px;
+}
+
+.card-back:hover {
+    transform: translateY(-5px);
+    transition: transform 0.5s;
+    box-shadow: 0px 0px 20px rgba(255, 255, 28, 0.8);
+    border-radius: 15px;
+}
+
+.flip {
+    transform: rotateY(180deg);
 }
 
 .stat-box {

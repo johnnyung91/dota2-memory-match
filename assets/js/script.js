@@ -9,28 +9,27 @@ var attempts = 0;
 var gamesPlayed = 0;
 
 var cards = [
-    "js-logo",
-    "js-logo",
-    "css-logo",
-    "css-logo",
-    "html-logo",
-    "html-logo",
-    "github-logo",
-    "github-logo",
-    "node-logo",
-    "node-logo",
-    "docker-logo",
-    "docker-logo",
-    "mysql-logo",
-    "mysql-logo",
-    "php-logo",
-    "php-logo",
-    "react-logo",
-    "react-logo"
+    "faceless",
+    "kunkka",
+    "lich",
+    "lifestealer",
+    "shadowfiend",
+    "spiritbreaker",
+    "tiny",
+    "vengeful",
+    "viper"
 ];
 var gameCards = document.getElementById("game-cards");
 var modal = document.querySelector(".modal-overlay");
 var modalButton = document.querySelector(".modal-button");
+
+var midasCorrect = new Audio()
+midasCorrect.src = "./assets/audio/midas_correct.mp3"
+midasCorrect.volume = 0.2
+
+var headBonk = new Audio()
+headBonk.src = "./assets/audio/headbonk.mp3"
+headBonk.volume = 0.5
 
 //Global Variables end
 
@@ -42,6 +41,8 @@ initiateApp();
 gameCards.addEventListener("click", handleClick);
 modalButton.addEventListener("click", resetGame);
 
+
+
 function handleClick(event) {
     if (event.target.className.indexOf("card-back") === -1) {
         return;
@@ -51,10 +52,12 @@ function handleClick(event) {
 
     if (!firstCardClicked) {
         firstCardClicked = event.target;
+        firstCardClicked.parentElement.classList.add('flip');
         var firstCardSibling = firstCardClicked.previousElementSibling;
         firstCardClasses = firstCardSibling.className;
     } else {
         secondCardClicked = event.target;
+        secondCardClicked.parentElement.classList.add('flip');
         var secondCardSibling = secondCardClicked.previousElementSibling;
         secondCardClasses = secondCardSibling.className;
 
@@ -63,6 +66,7 @@ function handleClick(event) {
         if (firstCardClasses === secondCardClasses) {
             gameCards.addEventListener("click", handleClick);
             backToNull();
+            correctSound();
             matches++;
             attempts++;
             displayStats();
@@ -70,14 +74,17 @@ function handleClick(event) {
                 modal.classList.remove("hidden");
             }
         } else {
-            setTimeout(notMatched, 1000);
+            wrongSound();
+            setTimeout(notMatched, 750);
         }
     }
 }
 
 function notMatched() {
     firstCardClicked.classList.remove("hidden");
+    firstCardClicked.parentElement.classList.remove('flip');
     secondCardClicked.classList.remove("hidden");
+    secondCardClicked.parentElement.classList.remove('flip');
     gameCards.addEventListener("click", handleClick);
     backToNull();
     attempts++;
@@ -117,8 +124,7 @@ function resetGame() {
     displayStats();
     resetCards();
     destroyChildren(gameCards);
-    shuffle(cards);
-    startGame(cards);
+    shuffleStart(cards);
     modal.classList.add("hidden");
 }
 
@@ -129,20 +135,22 @@ function resetCards() {
     }
 }
 
-//start of shuffle
-function shuffle(array) {
-    var currentIndex = array.length,
+//start of shuffleStart
+function shuffleStart(array) {
+    var doubledArray = array.concat(array)
+
+    var currentIndex = doubledArray.length,
         temporaryValue,
         randomIndex;
     while (0 !== currentIndex) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
 
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
+        temporaryValue = doubledArray[currentIndex];
+        doubledArray[currentIndex] = doubledArray[randomIndex];
+        doubledArray[randomIndex] = temporaryValue;
     }
-    return array;
+    startGame(doubledArray)
 }
 
 function startGame(cardArray) {
@@ -170,6 +178,13 @@ function destroyChildren(element) {
 }
 
 function initiateApp() {
-    shuffle(cards);
-    startGame(cards);
+    shuffleStart(cards);
+}
+
+function correctSound() {
+    midasCorrect.play();
+}
+
+function wrongSound() {
+    setTimeout(() => headBonk.play(), 250)
 }

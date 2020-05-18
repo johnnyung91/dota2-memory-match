@@ -1,63 +1,80 @@
 body {
-    background-image: url('../images/lfz-background.jpg');
+    background-image: url("../dota 2 hero portraits/cinders.jpg");
     background-size: cover;
+    font-family: "Radiance";
+    color: #7d7d7d;
 }
 
 header h1 {
-    font-size: 4rem;
+    font-size: 3vw;
+    font-family: "Trajan Bold";
+    color: #9f8972;
+    letter-spacing: 0.8rem;
 }
 
 div.card {
     position: relative;
 }
 
-.card-front, .card-back {
+.card-front,
+.card-back {
     height: 100%;
     width: 100%;
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
+    border-radius: 15px;
+}
+
+.card-front {
+    transform: rotateY('-180deg');
+    opacity: 0;
+}
+.flip > .card-front {
+    opacity: 1;
 }
 
 .card-back {
-    background-image: url('../images/lfz-card.jpg');
+    background-image: url("../dota 2 hero portraits/dota2.jpg");
+    transition: transform 0.5s;
 }
 
-.css-logo {
-    background-image: url('../images/css-logo.png');
+.faceless {
+    background-image: url("../dota 2 hero portraits/facelessvoid.jpg");
+    background-color: black;
 }
 
-.docker-logo {
-    background-image: url('../images/docker-logo.jpg');
+.kunkka {
+    background-image: url("../dota 2 hero portraits/kunkka.jpg");
 }
 
-.github-logo {
-    background-image: url('../images/gitHub-logo.png');
+.lich {
+    background-image: url("../dota 2 hero portraits/lich.jpg");
 }
 
-.html-logo {
-    background-image: url('../images/html-logo.png');
+.lifestealer {
+    background-image: url("../dota 2 hero portraits/lifestealer.jpg");
 }
 
-.js-logo {
-    background-image: url('../images/js-logo.png')
+.shadowfiend {
+    background-image: url("../dota 2 hero portraits/shadowfiend.jpg");
 }
 
-.mysql-logo {
-    background-image: url('../images/mysql-logo.jpg');
+.spiritbreaker {
+    background-image: url("../dota 2 hero portraits/spiritbreaker.jpg");
 }
 
-.node-logo {
-    background-image: url('../images/node-logo.png');
+.tiny {
+    background-image: url("../dota 2 hero portraits/tiny.jpg");
 }
 
-.php-logo {
-    background-image: url('../images/php-logo.jpeg');
+.vengeful {
+    background-image: url("../dota 2 hero portraits/vengefulspirit.jpg");
 }
 
-.react-logo {
-    background-image: url('../images/react-logo.png');
+.viper {
+    background-image: url("../dota 2 hero portraits/viper.jpg");
 }
 
 .modal-overlay {
@@ -71,19 +88,28 @@ div.card {
 }
 
 .modal-content {
-    background-color: #58ACF5;
+    background-image: url("../dota 2 hero portraits/repeat.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.5);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    text-align: center;
     width: 50%;
     height: 50%;
+    letter-spacing: 1px;
 }
 
-button {
-    font-size: 2rem;
-    border: 1px solid black;
+.modal-button {
+    font-size: 1.5rem;
+    font-family: "Noto Sans", sans-serif;
+    background-color: #111c26;
+    border: 1px solid #336391;
+    color: #336391;
     border-radius: 10px;
+    padding: 1rem 3rem;
 }
 
 .hidden {
