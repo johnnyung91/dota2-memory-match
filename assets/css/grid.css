@@ -1,12 +1,10 @@
 * {
     box-sizing: border-box;
 }
-
 body {
     height: 100vh;
     margin: 0;
 }
-
 .container {
     width: 90%;
     margin: auto;
@@ -14,12 +12,10 @@ body {
     padding-top: 2%;
     padding-bottom: 2%;
 }
-
 .row {
     width: 100%;
     display: flex;
 }
-
 .header.row {
     height: 12%;
     display: flex;
@@ -27,73 +23,70 @@ body {
     align-items: center;
     margin-bottom: 1%;
 }
-
 .game.row {
-    height: 74%;
+    height: 87%;
 }
-
 .col-1 {
     width: 8%;
 }
-
 .col-2 {
     width: 16%;
 }
-
 .col-3 {
     width: 24%;
 }
-
 .col-4 {
     width: 32%;
 }
-
 .col-5 {
     width: 40%;
 }
-
 .col-6 {
     width: 48%;
 }
-
 .col-7 {
     width: 56%;
 }
-
 .col-8 {
     width: 64%;
 }
-
 .col-9 {
     width: 72%;
 }
-
 .col-10 {
     width: 80%;
 }
-
 .col-11 {
     width: 88%;
 }
-
 .col-12 {
     width: 96%;
 }
-
 aside {
     width: 20%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
-
+aside > div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+    height: 15%;
+    background-color: #1b1d1d;
+    font-size: 1.3rem;
+    background-image: url("../dota 2 hero portraits/repeat.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    box-shadow: 0px 0px 15px rgba(172, 48, 28, 0.8);
+}
 .stat-box {
     display: flex;
     flex-direction: column;
     letter-spacing: 1px;
 }
-
 main {
     width: 75%;
     display: flex;
@@ -103,7 +96,6 @@ main {
     margin: 0 auto;
     perspective: 1000px;
 }
-
 .card {
     height: 31%;
     width: 14%;
@@ -114,25 +106,12 @@ main {
     box-shadow: 0px 0px 15px rgba(172, 48, 28, 0.8);
     border-radius: 15px;
 }
-
 .card-back:hover {
     transform: translateY(-5px);
     transition: transform 0.5s;
     box-shadow: 0px 0px 20px rgba(255, 255, 28, 0.8);
     border-radius: 15px;
 }
-
 .flip {
     transform: rotateY(180deg);
-}
-
-.stat-box {
-    display: flex;
-    flex-direction: column;
-}
-
-.stats.row {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
 }
