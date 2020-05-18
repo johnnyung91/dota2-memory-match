@@ -22,8 +22,14 @@ var cards = [
 var gameCards = document.getElementById("game-cards");
 var modal = document.querySelector(".modal-overlay");
 var modalButton = document.querySelector(".modal-button");
-var midasCorrect = document.getElementById('midasCorrect')
-var headBonk = document.getElementById('headBonk')
+
+var midasCorrect = new Audio()
+midasCorrect.src = "./assets/audio/midas_correct.mp3"
+midasCorrect.volume = 0.2
+
+var headBonk = new Audio()
+headBonk.src = "./assets/audio/headbonk.mp3"
+headBonk.volume = 0.5
 
 //Global Variables end
 
@@ -34,6 +40,8 @@ initiateApp();
 
 gameCards.addEventListener("click", handleClick);
 modalButton.addEventListener("click", resetGame);
+
+
 
 function handleClick(event) {
     if (event.target.className.indexOf("card-back") === -1) {
@@ -178,5 +186,5 @@ function correctSound() {
 }
 
 function wrongSound() {
-    headBonk.play();
+    setTimeout(() => headBonk.play(), 250)
 }
